@@ -1,0 +1,25 @@
+.stat-item {
+  text-align: center;
+  padding: var(--space-4);
+}
+
+.stat-item__value {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--stat-item-value-color, var(--color-primary));
+  line-height: var(--line-height-tight);
+}
+
+.stat-item__label {
+  margin-top: var(--space-1);
+  color: var(--stat-item-label-color, var(--color-text-muted));
+  font-size: var(--font-size-sm);
+}
+
+// Se adapta al ancho del contenedor "stats-grid" declarado en cifras-institucionales.scss,
+// no solo al viewport, para poder reutilizarse en cualquier layout futuro.
+@container stats-grid (max-width: 22rem) {
+  .stat-item__value {
+    font-size: var(--font-size-lg);
+  }
+}

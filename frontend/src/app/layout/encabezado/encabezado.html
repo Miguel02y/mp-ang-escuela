@@ -1,0 +1,39 @@
+<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+<header class="site-header">
+  <div class="topbar">
+    <div class="topbar__inner">
+      <ul class="topbar__contact">
+        <li><a href="tel:+573000000000">📞 300 000 0000</a></li>
+        <li><a href="mailto:contacto@cerpenalisa.edu.co">✉️ contacto&#64;cerpenalisa.edu.co</a></li>
+      </ul>
+      <p class="topbar__location">Vereda Peñalisa, Salgar – Antioquia</p>
+    </div>
+  </div>
+  <div class="navbar">
+    <div class="navbar__inner">
+      <a class="navbar__brand" routerLink="/">
+        <img
+          ngSrc="images/escudo-penalisa.png"
+          width="48"
+          height="48"
+          alt="Escudo del Centro Educativo Rural Peñalisa"
+          class="navbar__logo"
+        />
+        <span class="navbar__brand-text">
+          <span class="navbar__brand-name">Centro Educativo Rural Peñalisa</span>
+          <span class="navbar__brand-motto">Transformando futuro</span>
+        </span>
+      </a>
+      <app-menu-navegacion class="navbar__menu" [elementos]="elementosNavegacion" />
+      <button
+        type="button"
+        class="navbar__toggle"
+        (click)="menuMovilAbierto.set(true)"
+        aria-label="Abrir menú de navegación"
+      >
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </div>
+</header>
+<app-menu-movil [elementos]="elementosNavegacion" [(abierto)]="menuMovilAbierto" />

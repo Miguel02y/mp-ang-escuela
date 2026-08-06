@@ -1,0 +1,43 @@
+@let actual = elemento();
+@if (actual.hijos; as hijos) {
+  <button
+    cdkMenuItem
+    [cdkMenuTriggerFor]="submenu"
+    class="nav-link nav-link--trigger"
+    [class.nav-link--nested]="profundidad() > 0"
+  >
+    {{ actual.etiqueta }}
+    <span class="nav-link__caret" aria-hidden="true"></span>
+  </button>
+  <ng-template #submenu>
+    <ul cdkMenu class="nav-submenu" [class.nav-submenu--flyout]="profundidad() > 0">
+      @for (hijo of hijos; track hijo.etiqueta) {
+        <li>
+          <app-item-menu-navegacion [elemento]="hijo" [profundidad]="profundidad() + 1" />
+        </li>
+      }
+    </ul>
+  </ng-template>
+} @else if (actual.urlExterna; as url) {
+  <a
+    cdkMenuItem
+    class="nav-link"
+    [class.nav-link--nested]="profundidad() > 0"
+    [href]="url"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {{ actual.etiqueta }}
+  </a>
+} @else {
+  <a
+    cdkMenuItem
+    class="nav-link"
+    [class.nav-link--nested]="profundidad() > 0"
+    [routerLink]="actual.ruta"
+    routerLinkActive="nav-link--active"
+    [routerLinkActiveOptions]="{ exact: actual.ruta === '/' }"
+  >
+    {{ actual.etiqueta }}
+  </a>
+}

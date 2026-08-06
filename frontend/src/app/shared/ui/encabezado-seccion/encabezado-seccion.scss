@@ -1,0 +1,30 @@
+.section-heading {
+  max-width: 40rem;
+  margin-bottom: var(--space-6);
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    color: var(--color-secondary-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-2);
+  }
+
+  &__title {
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-tight);
+    color: var(--color-text);
+  }
+
+  &__description {
+    margin-top: var(--space-3);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-md);
+  }
+}

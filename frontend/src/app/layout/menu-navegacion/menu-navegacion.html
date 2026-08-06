@@ -1,0 +1,7 @@
+<ul cdkMenuBar class="nav-menu" aria-label="Navegación principal">
+  @for (elemento of elementos(); track elemento.etiqueta) {
+    <li>
+      <app-item-menu-navegacion [elemento]="elemento" />
+    </li>
+  }
+</ul>

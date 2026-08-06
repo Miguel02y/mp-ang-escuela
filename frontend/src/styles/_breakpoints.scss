@@ -1,0 +1,29 @@
+// Mobile-first: los estilos base son para móvil; estos mixins amplían hacia arriba.
+$breakpoint-sm: 30rem; // 480px – móvil grande
+$breakpoint-md: 48rem; // 768px – tablet
+$breakpoint-lg: 64rem; // 1024px – escritorio / donde aparece la barra de navegación completa
+$breakpoint-xl: 80rem; // 1280px – escritorio grande
+
+@mixin sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}

@@ -1,0 +1,27 @@
+@use 'styles/breakpoints' as bp;
+
+.stats-band {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+
+  app-dato-estadistico {
+    --stat-item-value-color: var(--color-white);
+    --stat-item-label-color: var(--color-gray-100);
+  }
+}
+
+.stats-band__grid {
+  container-type: inline-size;
+  container-name: stats-grid;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding: var(--space-6) var(--space-4);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+
+  @include bp.md {
+    grid-template-columns: repeat(4, 1fr);
+    padding-inline: var(--space-5);
+  }
+}

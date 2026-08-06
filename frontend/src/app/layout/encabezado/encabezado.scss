@@ -1,0 +1,135 @@
+@use 'styles/breakpoints' as bp;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+}
+
+.topbar {
+  display: none;
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
+
+  @include bp.md {
+    display: block;
+  }
+
+  &__inner {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-5);
+    height: var(--topbar-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  &__contact {
+    display: flex;
+    gap: var(--space-5);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__location {
+    margin: 0;
+    opacity: 0.9;
+  }
+}
+
+.navbar {
+  background-color: var(--color-primary);
+
+  &__inner {
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-4);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+
+    @include bp.md {
+      padding-inline: var(--space-5);
+    }
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-width: 0;
+  }
+
+  &__logo {
+    flex-shrink: 0;
+    border-radius: var(--radius-sm);
+  }
+
+  &__brand-text {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    line-height: var(--line-height-tight);
+    color: var(--color-white);
+    min-width: 0;
+    max-width: clamp(8rem, 20vw, 16rem);
+  }
+
+  &__brand-name {
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include bp.md {
+      font-size: var(--font-size-base);
+    }
+  }
+
+  &__brand-motto {
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__menu {
+    display: none;
+
+    @include bp.xl {
+      display: block;
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+    }
+
+    @include bp.xl {
+      display: none;
+    }
+  }
+}

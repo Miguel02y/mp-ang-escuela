@@ -1,0 +1,16 @@
+<section class="quick-links" aria-labelledby="quick-links-title">
+  <div class="quick-links__inner">
+    <h2 id="quick-links-title" class="sr-only">Accesos rápidos</h2>
+    <ul class="quick-links__grid">
+      @for (enlace of enlaces; track enlace.titulo) {
+        <li>
+          <a class="quick-links__card" [routerLink]="enlace.ruta">
+            <span class="quick-links__icon" aria-hidden="true">{{ enlace.icono }}</span>
+            <span class="quick-links__title">{{ enlace.titulo }}</span>
+            <span class="quick-links__description">{{ enlace.descripcion }}</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
