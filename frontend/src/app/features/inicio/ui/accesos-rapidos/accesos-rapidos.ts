@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { RUTAS_CONTENIDO } from '../../../../rutas';
 
 interface EnlaceRapido {
   readonly icono: string;
@@ -21,25 +22,25 @@ export class AccesosRapidos {
       icono: '📝',
       titulo: 'Admisiones',
       descripcion: 'Conoce el proceso y los requisitos de matrícula para 2026.',
-      ruta: '/admisiones',
+      ruta: RUTAS_CONTENIDO.admisiones,
     },
     {
       icono: '📅',
       titulo: 'Cronograma 2026',
       descripcion: 'Fechas clave del calendario académico y actividades institucionales.',
-      ruta: '/cronograma',
+      ruta: RUTAS_CONTENIDO.cronograma,
     },
     {
       icono: '🧭',
       titulo: 'Orientación Escolar',
       descripcion: 'Acompañamiento psicosocial para estudiantes y familias.',
-      ruta: '/orientacion-escolar',
+      ruta: RUTAS_CONTENIDO.orientacionEscolar,
     },
     {
       icono: '☎️',
       titulo: 'Contáctenos',
       descripcion: 'Comunícate con la institución para resolver tus dudas.',
-      ruta: '/contacto',
+      ruta: RUTAS_CONTENIDO.contacto,
     },
   ];
 }

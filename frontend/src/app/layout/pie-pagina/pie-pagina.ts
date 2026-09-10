@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { RUTAS_CONTENIDO, URL_PLATAFORMA } from '../../rutas';
 
 @Component({
   selector: 'app-pie-pagina',
@@ -10,4 +11,6 @@ import { RouterLink } from '@angular/router';
 })
 export class PiePagina {
   protected readonly anioActual = new Date().getFullYear();
+  protected readonly rutas = RUTAS_CONTENIDO;
+  protected readonly urlPlataforma = URL_PLATAFORMA;
 }

@@ -1,0 +1,43 @@
+@let pagina = contenido();
+
+<article class="content-page">
+  <header class="content-page__header">
+    <h1 class="content-page__title">{{ pagina.titulo }}</h1>
+    <p class="content-page__lead">{{ pagina.descripcion }}</p>
+  </header>
+
+  @if (pagina.bloques; as bloques) {
+    <div class="content-page__body">
+      @for (bloque of bloques; track $index) {
+        @switch (bloque.tipo) {
+          @case ('parrafo') {
+            <p class="content-page__paragraph">{{ bloque.texto }}</p>
+          }
+          @case ('lista') {
+            @if (bloque.titulo) {
+              <h2 class="content-page__subtitle">{{ bloque.titulo }}</h2>
+            }
+            <ul class="content-page__list">
+              @for (item of bloque.items; track item) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          }
+        }
+      }
+    </div>
+  } @else {
+    <div class="content-page__pending">
+      <p class="content-page__pending-text">
+        Estamos preparando el contenido de esta sección. Muy pronto encontrarás aquí la
+        información completa.
+      </p>
+      <p>
+        Si necesitas estos datos ahora, escríbenos a
+        <a href="mailto:contacto&#64;cerpenalisa.edu.co">contacto&#64;cerpenalisa.edu.co</a>
+        o llámanos al <a href="tel:+573000000000">300 000 0000</a>.
+      </p>
+      <a class="content-page__back" [routerLink]="rutaInicio">Volver al inicio</a>
+    </div>
+  }
+</article>

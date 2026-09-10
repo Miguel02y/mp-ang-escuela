@@ -14,10 +14,10 @@
     <nav class="site-footer__col" aria-label="Enlaces institucionales">
       <h2 class="site-footer__heading">Institución</h2>
       <ul class="site-footer__links">
-        <li><a routerLink="/institucion/mision-vision">Misión y Visión</a></li>
-        <li><a routerLink="/institucion/pei">PEI</a></li>
-        <li><a routerLink="/admisiones">Admisiones</a></li>
-        <li><a routerLink="/contacto">Contáctenos</a></li>
+        <li><a [routerLink]="rutas.misionVision">Misión y Visión</a></li>
+        <li><a [routerLink]="rutas.pei">PEI</a></li>
+        <li><a [routerLink]="rutas.admisiones">Admisiones</a></li>
+        <li><a [routerLink]="rutas.contacto">Contáctenos</a></li>
       </ul>
     </nav>
 
@@ -31,7 +31,7 @@
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
         </li>
         <li>
-          <a href="https://sinai.net.co/" target="_blank" rel="noopener noreferrer"
+          <a [href]="urlPlataforma" target="_blank" rel="noopener noreferrer"
             >Plataforma SINAÍ</a
           >
         </li>

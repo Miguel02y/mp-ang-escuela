@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { RUTAS_CONTENIDO } from '../../../../rutas';
 import { EncabezadoSeccion } from '../../../../shared/ui/encabezado-seccion/encabezado-seccion';
 
 @Component({
@@ -10,4 +11,6 @@ import { EncabezadoSeccion } from '../../../../shared/ui/encabezado-seccion/enca
   styleUrl: './quienes-somos.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QuienesSomos {}
+export class QuienesSomos {
+  protected readonly rutas = RUTAS_CONTENIDO;
+}

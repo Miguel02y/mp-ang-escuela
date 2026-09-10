@@ -1,0 +1,18 @@
+<section class="not-found">
+  <p class="not-found__code">Error 404</p>
+  <h1 class="not-found__title">No encontramos esta página</h1>
+  <p class="not-found__text">
+    Es posible que la dirección esté mal escrita o que la página haya cambiado de lugar.
+  </p>
+
+  <a class="not-found__cta" [routerLink]="rutaInicio">Volver al inicio</a>
+
+  <nav class="not-found__suggestions" aria-label="Páginas sugeridas">
+    <h2 class="not-found__suggestions-title">Quizá buscabas:</h2>
+    <ul>
+      @for (sugerencia of sugerencias; track sugerencia.ruta) {
+        <li><a [routerLink]="sugerencia.ruta">{{ sugerencia.etiqueta }}</a></li>
+      }
+    </ul>
+  </nav>
+</section>

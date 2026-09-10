@@ -1,3 +1,5 @@
+import { RUTA_INICIO, RUTAS_CONTENIDO, URL_PLATAFORMA } from '../rutas';
+
 export interface ElementoNavegacion {
   readonly etiqueta: string;
   readonly ruta?: string;
@@ -6,14 +8,14 @@ export interface ElementoNavegacion {
 }
 
 export const ELEMENTOS_NAVEGACION: readonly ElementoNavegacion[] = [
-  { etiqueta: 'Inicio', ruta: '/' },
+  { etiqueta: 'Inicio', ruta: RUTA_INICIO },
   {
     etiqueta: 'La Institución',
     hijos: [
-      { etiqueta: 'Misión y Visión', ruta: '/institucion/mision-vision' },
-      { etiqueta: 'PEI', ruta: '/institucion/pei' },
-      { etiqueta: 'Historia', ruta: '/institucion/historia' },
-      { etiqueta: 'Horizonte institucional', ruta: '/institucion/horizonte' },
+      { etiqueta: 'Misión y Visión', ruta: RUTAS_CONTENIDO.misionVision },
+      { etiqueta: 'PEI', ruta: RUTAS_CONTENIDO.pei },
+      { etiqueta: 'Historia', ruta: RUTAS_CONTENIDO.historia },
+      { etiqueta: 'Horizonte institucional', ruta: RUTAS_CONTENIDO.horizonteInstitucional },
     ],
   },
   {
@@ -22,55 +24,55 @@ export const ELEMENTOS_NAVEGACION: readonly ElementoNavegacion[] = [
       {
         etiqueta: 'Directiva',
         hijos: [
-          { etiqueta: 'Rectoría', ruta: '/gestiones/directiva/rectoria' },
-          { etiqueta: 'Consejo Académico', ruta: '/gestiones/directiva/consejo-academico' },
-          { etiqueta: 'Consejo Directivo', ruta: '/gestiones/directiva/consejo-directivo' },
-          { etiqueta: 'Consejo de Padres', ruta: '/gestiones/directiva/consejo-de-padres' },
+          { etiqueta: 'Rectoría', ruta: RUTAS_CONTENIDO.rectoria },
+          { etiqueta: 'Consejo Académico', ruta: RUTAS_CONTENIDO.consejoAcademico },
+          { etiqueta: 'Consejo Directivo', ruta: RUTAS_CONTENIDO.consejoDirectivo },
+          { etiqueta: 'Consejo de Padres', ruta: RUTAS_CONTENIDO.consejoDePadres },
           {
             etiqueta: 'Comité de convivencia escolar',
-            ruta: '/gestiones/directiva/comite-convivencia',
+            ruta: RUTAS_CONTENIDO.comiteConvivencia,
           },
-          { etiqueta: 'Personero/a', ruta: '/gestiones/directiva/personero' },
+          { etiqueta: 'Personero/a', ruta: RUTAS_CONTENIDO.personero },
           {
             etiqueta: 'Representante de estudiantes',
-            ruta: '/gestiones/directiva/representante-estudiantes',
+            ruta: RUTAS_CONTENIDO.representanteEstudiantes,
           },
           {
             etiqueta: 'Representante de grupos',
-            ruta: '/gestiones/directiva/representante-grupos',
+            ruta: RUTAS_CONTENIDO.representanteGrupos,
           },
-          { etiqueta: 'Formatos (FD)', ruta: '/gestiones/directiva/formatos' },
+          { etiqueta: 'Formatos (FD)', ruta: RUTAS_CONTENIDO.formatosDirectiva },
         ],
       },
       {
         etiqueta: 'Académica',
         hijos: [
-          { etiqueta: 'Plan de estudios', ruta: '/gestiones/academica/plan-de-estudios' },
-          { etiqueta: 'Calendario académico', ruta: '/gestiones/academica/calendario' },
-          { etiqueta: 'Evaluación institucional', ruta: '/gestiones/academica/evaluacion' },
+          { etiqueta: 'Plan de estudios', ruta: RUTAS_CONTENIDO.planDeEstudios },
+          { etiqueta: 'Calendario académico', ruta: RUTAS_CONTENIDO.calendarioAcademico },
+          { etiqueta: 'Evaluación institucional', ruta: RUTAS_CONTENIDO.evaluacionInstitucional },
         ],
       },
       {
         etiqueta: 'Comunidad',
         hijos: [
-          { etiqueta: 'Escuela de padres', ruta: '/gestiones/comunidad/escuela-de-padres' },
-          { etiqueta: 'Proyectos transversales', ruta: '/gestiones/comunidad/proyectos' },
-          { etiqueta: 'Bienestar estudiantil', ruta: '/gestiones/comunidad/bienestar' },
+          { etiqueta: 'Escuela de padres', ruta: RUTAS_CONTENIDO.escuelaDePadres },
+          { etiqueta: 'Proyectos transversales', ruta: RUTAS_CONTENIDO.proyectosTransversales },
+          { etiqueta: 'Bienestar estudiantil', ruta: RUTAS_CONTENIDO.bienestarEstudiantil },
         ],
       },
       {
         etiqueta: 'Financiera y Administrativa',
         hijos: [
-          { etiqueta: 'Presupuesto', ruta: '/gestiones/financiera/presupuesto' },
-          { etiqueta: 'Contratación', ruta: '/gestiones/financiera/contratacion' },
-          { etiqueta: 'Recursos físicos', ruta: '/gestiones/financiera/recursos-fisicos' },
+          { etiqueta: 'Presupuesto', ruta: RUTAS_CONTENIDO.presupuesto },
+          { etiqueta: 'Contratación', ruta: RUTAS_CONTENIDO.contratacion },
+          { etiqueta: 'Recursos físicos', ruta: RUTAS_CONTENIDO.recursosFisicos },
         ],
       },
     ],
   },
-  { etiqueta: 'Admisiones', ruta: '/admisiones' },
-  { etiqueta: 'Orientación Escolar', ruta: '/orientacion-escolar' },
-  { etiqueta: 'Cronograma 2026', ruta: '/cronograma' },
-  { etiqueta: 'Plataforma', urlExterna: 'https://sinai.net.co/' },
-  { etiqueta: 'Contáctenos', ruta: '/contacto' },
+  { etiqueta: 'Admisiones', ruta: RUTAS_CONTENIDO.admisiones },
+  { etiqueta: 'Orientación Escolar', ruta: RUTAS_CONTENIDO.orientacionEscolar },
+  { etiqueta: 'Cronograma 2026', ruta: RUTAS_CONTENIDO.cronograma },
+  { etiqueta: 'Plataforma', urlExterna: URL_PLATAFORMA },
+  { etiqueta: 'Contáctenos', ruta: RUTAS_CONTENIDO.contacto },
 ] as const;

@@ -1,6 +1,7 @@
 import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { RUTAS_CONTENIDO } from '../../../../rutas';
 
 @Component({
   selector: 'app-portada',
@@ -9,4 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './portada.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Portada {}
+export class Portada {
+  protected readonly rutas = RUTAS_CONTENIDO;
+}
