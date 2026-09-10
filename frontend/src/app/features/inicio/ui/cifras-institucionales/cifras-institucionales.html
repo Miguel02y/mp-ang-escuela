@@ -1,0 +1,9 @@
+<section class="stats-band" aria-label="Cifras institucionales">
+  <ul class="stats-band__grid">
+    @for (cifra of cifras; track cifra.etiqueta) {
+      <li>
+        <app-dato-estadistico [valor]="cifra.valor" [etiqueta]="cifra.etiqueta" />
+      </li>
+    }
+  </ul>
+</section>

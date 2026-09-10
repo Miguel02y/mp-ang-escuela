@@ -1,0 +1,15 @@
+<app-portada />
+<app-accesos-rapidos />
+<app-quienes-somos />
+
+@defer (on viewport) {
+  <app-cifras-institucionales />
+} @placeholder {
+  <div class="inicio-page__placeholder" aria-hidden="true"></div>
+}
+
+@defer (on viewport) {
+  <app-noticias-destacadas />
+} @placeholder {
+  <div class="inicio-page__placeholder" aria-hidden="true"></div>
+}

@@ -1,0 +1,42 @@
+@let actual = elemento();
+@if (actual.hijos; as hijos) {
+  <details class="mobile-nav-item" [style.--depth]="profundidad()">
+    <summary class="mobile-nav-item__summary">
+      {{ actual.etiqueta }}
+      <span class="mobile-nav-item__caret" aria-hidden="true"></span>
+    </summary>
+    <ul class="mobile-nav-item__children">
+      @for (hijo of hijos; track hijo.etiqueta) {
+        <li>
+          <app-item-menu-movil
+            [elemento]="hijo"
+            [profundidad]="profundidad() + 1"
+            (enlaceActivado)="enlaceActivado.emit()"
+          />
+        </li>
+      }
+    </ul>
+  </details>
+} @else if (actual.urlExterna; as url) {
+  <a
+    class="mobile-nav-item__link"
+    [style.--depth]="profundidad()"
+    [href]="url"
+    target="_blank"
+    rel="noopener noreferrer"
+    (click)="enlaceActivado.emit()"
+  >
+    {{ actual.etiqueta }}
+  </a>
+} @else {
+  <a
+    class="mobile-nav-item__link"
+    [style.--depth]="profundidad()"
+    [routerLink]="actual.ruta"
+    routerLinkActive="mobile-nav-item__link--active"
+    [routerLinkActiveOptions]="{ exact: actual.ruta === '/' }"
+    (click)="enlaceActivado.emit()"
+  >
+    {{ actual.etiqueta }}
+  </a>
+}

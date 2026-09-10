@@ -1,0 +1,14 @@
+<section class="news-highlights" aria-label="Noticias y eventos">
+  <div class="news-highlights__inner">
+    <app-encabezado-seccion textoSuperior="Comunidad" titulo="Noticias y eventos recientes" />
+    <ul class="news-highlights__grid">
+      @for (noticia of noticias; track noticia.titulo) {
+        <li class="news-highlights__card">
+          <p class="news-highlights__date">{{ noticia.fecha }}</p>
+          <h3 class="news-highlights__title">{{ noticia.titulo }}</h3>
+          <p class="news-highlights__summary">{{ noticia.resumen }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+@use 'styles/breakpoints' as bp;
+
+.about-summary {
+  padding-block: var(--space-7);
+  background-color: var(--color-surface-alt);
+}
+
+.about-summary__inner {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+
+  @include bp.md {
+    padding-inline: var(--space-5);
+  }
+
+  @include bp.lg {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+}
+
+.about-summary__media {
+  position: relative;
+  order: -1;
+  padding-inline-end: var(--space-6);
+  padding-block-end: var(--space-6);
+
+  @include bp.lg {
+    order: unset;
+  }
+}
+
+.about-summary__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+
+  &--secondary {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    border: 0.25rem solid var(--color-surface);
+  }
+}
+
+.about-summary__link {
+  display: inline-block;
+  margin-top: var(--space-5);
+  font-weight: 700;
+  color: var(--color-primary);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

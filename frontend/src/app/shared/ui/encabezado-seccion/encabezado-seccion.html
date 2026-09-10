@@ -1,0 +1,9 @@
+<div class="section-heading" [class.section-heading--center]="alineacion() === 'centro'">
+  @if (textoSuperior(); as textoSuperiorValor) {
+    <p class="section-heading__eyebrow">{{ textoSuperiorValor }}</p>
+  }
+  <h2 class="section-heading__title">{{ titulo() }}</h2>
+  @if (descripcion(); as descripcionValor) {
+    <p class="section-heading__description">{{ descripcionValor }}</p>
+  }
+</div>

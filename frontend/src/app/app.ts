@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Encabezado } from './layout/encabezado/encabezado';
+import { PiePagina } from './layout/pie-pagina/pie-pagina';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Encabezado, PiePagina],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  protected readonly title = signal('frontend');
-}
+export class App {}

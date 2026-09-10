@@ -1,0 +1,53 @@
+@use 'styles/breakpoints' as bp;
+
+.news-highlights {
+  padding-block: var(--space-7);
+}
+
+.news-highlights__inner {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+
+  @include bp.md {
+    padding-inline: var(--space-5);
+  }
+}
+
+.news-highlights__grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include bp.md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.news-highlights__card {
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.news-highlights__date {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary-dark);
+  font-weight: 700;
+}
+
+.news-highlights__title {
+  margin-top: var(--space-2);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-tight);
+}
+
+.news-highlights__summary {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}

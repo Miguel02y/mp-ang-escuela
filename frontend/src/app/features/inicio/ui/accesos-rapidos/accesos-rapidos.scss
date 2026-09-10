@@ -1,0 +1,78 @@
+@use 'styles/breakpoints' as bp;
+
+.quick-links {
+  padding-block: var(--space-7);
+}
+
+.quick-links__inner {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+
+  @include bp.md {
+    padding-inline: var(--space-5);
+  }
+}
+
+.quick-links__grid {
+  container-type: inline-size;
+  container-name: quick-links-grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+
+  @include bp.sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp.lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.quick-links__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-5);
+  background-color: var(--color-surface);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  &:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.quick-links__icon {
+  font-size: var(--font-size-xl);
+}
+
+.quick-links__title {
+  margin-top: var(--space-3);
+  font-weight: 700;
+  font-size: var(--font-size-md);
+  color: var(--color-primary);
+}
+
+.quick-links__description {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+// El propio grid declara el contenedor; cada card puede reaccionar a su ancho real
+// (por ejemplo si en el futuro este componente se reutiliza en una columna lateral angosta).
+@container quick-links-grid (max-width: 20rem) {
+  .quick-links__card {
+    padding: var(--space-4);
+  }
+}
